@@ -35,6 +35,10 @@ def fadeAnimation(ledTime):
 			leds.update(Leds.rgb_on((i,0,0)))
 			i += 1
 			time.sleep(ledTime)
+		while i > -1:
+			leds.update(Leds.rgb_on((i,0,0)))
+			i -= 1
+			time.sleep(ledTime)
 
 def main():
 	
@@ -43,7 +47,6 @@ def main():
 		# Play start sound and LED animation
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation(0.005)
-		leds.update(Leds.rgb_on((255,0,0)))
 
 		# While True will run forever
 		while True:
