@@ -5,6 +5,10 @@ from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 
+# Spacers
+vs = '\n'
+hs = '  '
+
 # sounds configs
 soundsPath = '/home/pi/GitHub/PISuperMarioWorld/sounds/'
 actions = [
@@ -31,7 +35,7 @@ actions = [
 	},
 	{
 		'id': 'yoshi',
-		'display': 'You got Yoshi!\n Yoshi adds 2 extra points each turn!', 
+		'display': 'You got Yoshi!\n' + hs + 'Yoshi adds 2 extra points each turn!', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
 		'points': 0
@@ -54,9 +58,6 @@ actions = [
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
-
-vs = '\n'
-hs = '  '
 
 def flashAnimation(cycles):
 	
