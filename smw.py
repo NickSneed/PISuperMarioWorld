@@ -121,6 +121,11 @@ def main():
 			curAction = actions[randomNum];
 			points = points + curAction['points'] + yoshi;
 
+			# Game over
+			if curAction['id'] == 'gameOver':
+				points = 0
+				yoshi = 0
+
 			# Actions
 			print('\n Score: ' + str(points))
 			print('\n ' + curAction['display'])
@@ -134,11 +139,6 @@ def main():
 			# Get yoshi
 			if curAction['id'] == 'yoshi':
 				yoshi = 1
-
-			# Game over
-			if curAction['id'] == 'gameOver':
-				points = 0
-				yoshi = 0
 
 			# Ending
 			if points >= 20:
