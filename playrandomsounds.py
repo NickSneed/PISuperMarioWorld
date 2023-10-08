@@ -27,7 +27,8 @@ def flashAnimation(ledTime):
 		leds.update(Leds.rgb_on(Color.WHITE))
 		time.sleep(ledTime)
 
-def fadeAnimation(ledTime):
+def fadeAnimation():
+	ledTime = 0.002
 
 	with Leds() as leds:
 
@@ -51,7 +52,7 @@ def main():
 
 		# Play start sound and LED animation
 		play_wav_async(soundsPath + startSound)
-		fadeAnimation(0.005)
+		fadeAnimation()
 
 		# While True will run forever
 		while True:
