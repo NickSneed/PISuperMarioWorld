@@ -127,11 +127,11 @@ def main():
 				yoshi = 0
 
 			# Actions
-			print(curAction['display'])
-			print(str(curAction['points'] + yoshi) + 'pts')
-			print('Score: ' + str(points))
+			print('\n ' + curAction['display'])
+			print(' ' + str(curAction['points'] + yoshi) + 'pts')
+			print(' Score: ' + str(points))
 			if yoshi > 0:
-				print('\nYou have Yoshi')
+				print('\n You have Yoshi')
 			leds.update(Leds.rgb_on(curAction['color']))
 			play_wav(soundsPath + curAction['sound'])
 			leds.update(Leds.rgb_off())
@@ -144,7 +144,7 @@ def main():
 			if points >= 20:
 				points = 0
 				yoshi = 0
-				print('\nYou win!')
+				print('\n You win!')
 				play_wav_async(soundsPath + endSound)
 				flashAnimation(0.15);
 				flashAnimation(0.15);
