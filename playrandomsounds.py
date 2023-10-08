@@ -27,14 +27,29 @@ def flashAnimation(ledTime):
 		leds.update(Leds.rgb_on(Color.WHITE))
 		time.sleep(ledTime)
 
+def fadeAnimation(ledTime):
+
+	with Leds() as leds:
+		leds.update(Leds.rgb_on(0,0,0))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(30,0,0))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(100,0,0))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(150,0,0))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(200,0,0))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(255,0,0))
+		time.sleep(ledTime)
+
 def main():
 	
 	with Board() as board, Leds() as leds:
 
 		# Play start sound and LED animation
 		play_wav_async(soundsPath + startSound)
-		leds.pattern = Pattern(2000, 0.75, 500, 500)
-		leds.update(Leds.rgb_pattern(Color.RED))
+		fadeAnimation(0.5)
 
 		# While True will run forever
 		while True:
