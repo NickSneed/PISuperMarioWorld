@@ -102,6 +102,7 @@ def main():
 		print('Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
+		print('Collect 20 points to win')
 		print('Press the button to start')
 
 		# While True will run forever
@@ -123,6 +124,7 @@ def main():
 			# Special actions
 			if curAction['id'] == 'gameOver':
 				points = 0
+				yoshi = 0
 			if curAction['id'] == 'yoshi':
 				yoshi = 2
 
@@ -137,6 +139,7 @@ def main():
 			# Ending
 			if points >= 20:
 				points = 0
+				yoshi = 0
 				print('You win!')
 				play_wav_async(soundsPath + endSound)
 				flashAnimation(0.15);
