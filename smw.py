@@ -111,7 +111,7 @@ def main():
 
 			# Turn on LED and play sound
 			curAction = actions[randomNum];
-			print(actions[randomNum]['display'] + ' ' + curAction['points'] + 'points')
+			print(actions[randomNum]['display'] + ' ' + str(curAction['points']) + 'points')
 			leds.update(Leds.rgb_on(curAction['color']))
 			play_wav(soundsPath + curAction['sound'])
 			leds.update(Leds.rgb_off())
