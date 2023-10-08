@@ -111,7 +111,7 @@ def main():
 		print(vs + hs + 'Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
-		print('\n' + vs 'Collect 20 points to win!')
+		print('\n' + vs + 'Collect 20 points to win!')
 		print(hs + 'Press the button to start')
 
 		# While True will run forever
