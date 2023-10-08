@@ -22,24 +22,24 @@ def main():
 			randomNum = random.randint(1,6)
 
 			# Pick LED color
-			ledColor = 'RED'
+			ledColor = Color.RED
 			if randomNum == 1:
-				ledColor = 'GREEN'
+				ledColor = Color.GREEN
 			elif randomNum == 2:
-				ledColor = 'BLUE'
+				ledColor = Color.BLUE
 			elif randomNum == 3:
-				ledColor = 'PURPLE'
+				ledColor = Color.PURPLE
 			elif randomNum == 4:
-				ledColor = 'CYAN'
+				ledColor = Color.CYAN
 			elif randomNum == 5:
-				ledColor = 'YELLOW'
+				ledColor = Color.YELLOW
 			elif randomNum == 6:
-				ledColor = 'RED'
+				ledColor = Color.RED
 			else: 
-				ledColor = 'WHITE'
+				ledColor = Color.WHITE
 
 			# Turn on LED and play sound
-			leds.update(Leds.rgb_on(Color[ledColor]))
+			leds.update(Leds.rgb_on(ledColor))
 			play_wav(TEST_SOUND_PATH + 's' + str(randomNum) + '.wav')
 			leds.update(Leds.rgb_off())
 
