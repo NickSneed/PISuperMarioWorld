@@ -31,7 +31,7 @@ actions = [
 	},
 	{
 		'id': 'yoshi',
-		'display': 'You got Yoshi!', 
+		'display': 'You got Yoshi!\nYoshi adds 2 points each turn!', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
 		'points': 0
@@ -130,7 +130,7 @@ def main():
 
 			# Actions
 			print(curAction['display'])
-			print(str(curAction['points']) + 'pts')
+			print(str(curAction['points'] + yoshi) + 'pts')
 			print('Total Points: ' + str(points))
 			leds.update(Leds.rgb_on(curAction['color']))
 			play_wav(soundsPath + curAction['sound'])
