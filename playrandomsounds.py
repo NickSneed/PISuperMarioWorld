@@ -7,15 +7,53 @@ from aiy.leds import Leds, Color, Pattern
 # sounds configs
 soundsPath = '/home/pi/GitHub/PIPlayRandomSounds/sounds/'
 actions = [
-	{'name': '1 UP', 'wav': 'smw_1-up.wav', 'color': Color.GREEN},
-	{'name': 'Mushroom', 'wav': 'smw_power-up.wav', 'color': Color.RED},
-	{'name': 'Coin', 'wav': 'smw_coin.wav', 'color': Color.YELLOW},
-	{'name': 'Yoshi', 'wav': 'smw_riding_yoshi.wav', 'color': Color.GREEN},
-	{'name': 'Course Clear', 'wav': 'smw_course_clear.wav', 'color': Color.PURPLE},
-	{'name': 'Game Over', 'wav': 'smw_game_over.wav', 'color': Color.RED}
+	{
+		'id': '1up',
+		'display': '1 UP', 
+		'sound': 'smw_1-up.wav', 
+		'color': Color.GREEN,
+		'points': 10
+	},
+	{
+		'id': 'mushroom',
+		'display': 'Mushroom', 
+		'sound': 'smw_power-up.wav', 
+		'color': Color.RED,
+		'points': 10
+	},
+	{
+		'id': 'coin',
+		'display': 'Coin', 
+		'sound': 'smw_coin.wav', 
+		'color': Color.YELLOW,
+		'points': 10
+	},
+	{
+		'id': 'yohsi',
+		'display': 'Yoshi', 
+		'sound': 'smw_riding_yoshi.wav', 
+		'color': Color.GREEN,
+		'points': 10
+	},
+	{
+		'id': 'courseClear',
+		'display': 'Course Clear', 
+		'sound': 'smw_course_clear.wav', 
+		'color': Color.PURPLE,
+		'points': 10
+	},
+	{
+		'id': 'gameOver',
+		'display': 'Game Over', 
+		'sound': 'smw_game_over.wav', 
+		'color': Color.RED,
+		'points': 10
+	}
 ]
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
+
+points = 0;
 
 def flashAnimation(ledTime):
 
@@ -72,9 +110,9 @@ def main():
 			randomNum = random.randint(0,5)
 
 			# Turn on LED and play sound
-			print(actions[randomNum]['name'])
+			print(actions[randomNum]['display'])
 			leds.update(Leds.rgb_on(actions[randomNum]['color']))
-			play_wav(soundsPath + actions[randomNum]['wav'])
+			play_wav(soundsPath + actions[randomNum]['sound'])
 			leds.update(Leds.rgb_off())
 
 if __name__ == '__main__':
