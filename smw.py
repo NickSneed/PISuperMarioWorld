@@ -125,7 +125,7 @@ def main():
 
 			# Actions
 			if points < 20:
-				print(curAction['display'] + ' | ' + curAction['points'] + 'pts')
+				print(curAction['display'] + ' | ' + str(curAction['points']) + 'pts')
 				print('Total Points: ' + str(points))
 				leds.update(Leds.rgb_on(curAction['color']))
 				play_wav(soundsPath + curAction['sound'])
