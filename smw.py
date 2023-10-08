@@ -121,15 +121,10 @@ def main():
 			curAction = actions[randomNum];
 			points = points + curAction['points'] + yoshi;
 
-			# Game over
-			if curAction['id'] == 'gameOver':
-				points = 0
-				yoshi = 0
-
 			# Actions
 			print('\n Score: ' + str(points))
 			print('\n ' + curAction['display'])
-			print('\n ' + str(curAction['points'] + yoshi) + 'pts')
+			print(' ' + str(curAction['points'] + yoshi) + 'pts')
 			if yoshi > 0:
 				print('\n You have Yoshi')
 			leds.update(Leds.rgb_on(curAction['color']))
@@ -139,6 +134,11 @@ def main():
 			# Get yoshi
 			if curAction['id'] == 'yoshi':
 				yoshi = 1
+
+			# Game over
+			if curAction['id'] == 'gameOver':
+				points = 0
+				yoshi = 0
 
 			# Ending
 			if points >= 20:
