@@ -33,7 +33,7 @@ def main():
 
 		# Play start sound and LED animation
 		play_wav_async(soundsPath + startSound)
-		leds.pattern = Pattern.bbreathe(500)
+		leds.pattern = Pattern.breathe(500)
 		leds.update(Leds.rgb_pattern(Color.RED))
 
 		# While True will run forever
