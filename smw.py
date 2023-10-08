@@ -55,6 +55,9 @@ startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
 
+vs = '/n'
+hs = '  '
+
 def flashAnimation(cycles):
 	
 	ledTime = 0.15
@@ -105,11 +108,11 @@ def main():
 
 		# Play start sound and LED animation
 		os.system('clear')
-		print('\n Super Mario World')
+		print(vs + hs + 'Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
-		print('\n Collect 20 points to win!')
-		print(' Press the button to start')
+		print('\n' + vs 'Collect 20 points to win!')
+		print(hs + 'Press the button to start')
 
 		# While True will run forever
 		while True:
@@ -133,12 +136,12 @@ def main():
 				yoshi = 0
 
 			# Actions
-			print('\n Score: ' + str(points))
-			print('\n ' + curAction['display'])
+			print(vs + hs + 'Score: ' + str(points))
+			print('\n' + hs + curAction['display'])
 			if curAction['points'] + yoshi > 0:
 				print(' ' + str(curAction['points'] + yoshi) + 'pts')
 			if yoshi > 0:
-				print('\n You have Yoshi')
+				print('\n' + hs + 'You have Yoshi')
 			leds.update(Leds.rgb_on(curAction['color']))
 			play_wav(soundsPath + curAction['sound'])
 			leds.update(Leds.rgb_off())
@@ -152,7 +155,7 @@ def main():
 				points = 0
 				yoshi = 0
 				os.system('clear')
-				print('\n You win!')
+				print(vs + hs + 'You win!')
 				play_wav_async(soundsPath + endSound)
 				flashAnimation(9);
 
