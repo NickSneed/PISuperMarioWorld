@@ -76,8 +76,8 @@ def main():
 
 			# Turn on LED and play sound
 			print('Playing sound ' + str(randomNum))
-			leds.update(Leds.rgb_on(actions[randomNum].color))
-			play_wav(soundsPath + actions[randomNum].wav)
+			leds.update(Leds.rgb_on(actions[randomNum]['color']))
+			play_wav(soundsPath + actions[randomNum]['wav'])
 			leds.update(Leds.rgb_off())
 
 if __name__ == '__main__':
