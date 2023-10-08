@@ -144,7 +144,7 @@ def main():
 			if points >= 20:
 				points = 0
 				yoshi = 0
-				print('You win!')
+				print('\nYou win!')
 				play_wav_async(soundsPath + endSound)
 				flashAnimation(0.15);
 				flashAnimation(0.15);
