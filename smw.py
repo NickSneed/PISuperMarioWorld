@@ -63,6 +63,7 @@ def flashAnimation(cycles):
 
 		i = 0
 		while i <= cycles:	
+			i -= 1
 			leds.update(Leds.rgb_on(Color.GREEN))
 			time.sleep(ledTime)
 			leds.update(Leds.rgb_on(Color.BLUE))
@@ -84,15 +85,15 @@ def fadeAnimation():
 		# Fade in
 		i = 0
 		while i < 256:
-			leds.update(Leds.rgb_on((i,0,0)))
 			i += 1
+			leds.update(Leds.rgb_on((i,0,0)))
 			time.sleep(ledTime)
 
 		# Fade out
 		i = 255
 		while i > -1:
-			leds.update(Leds.rgb_on((i,0,0)))
 			i -= 1
+			leds.update(Leds.rgb_on((i,0,0)))
 			time.sleep(ledTime)
 
 def main():
