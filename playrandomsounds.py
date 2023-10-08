@@ -42,7 +42,7 @@ def main():
 
 		# Play start sound and LED animation
 		play_wav_async(soundsPath + startSound)
-		fadeAnimation(0.5)
+		fadeAnimation(0.01)
 
 		# While True will run forever
 		while True:
@@ -50,7 +50,7 @@ def main():
 			# Button press
 			board.button.wait_for_press()
 			play_wav_async(soundsPath + pressSound)
-			flashAnimation(0.001);
+			flashAnimation(0.15);
 
 			# Generate random number
 			randomNum = random.randint(0,5)
