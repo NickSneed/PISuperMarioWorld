@@ -4,13 +4,18 @@ from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 
-TEST_SOUND_PATH = '/home/pi/GitHub/PIPlayRandomSounds/sounds/'
+# sounds configs
+soundsPath = '/home/pi/GitHub/PIPlayRandomSounds/sounds/'
+wavFiles = ['smw_1-up.wav', 'smw_power-up.wav', 'smw_game_over.wav', 'smw_coin.wav', 'smw_course_clear.wav', 'smw_riding_yoshi.wav']
+ledColors = [Color.GREEN, Color.BLUE, Color.YELLOW, Color.RED, Color.PURPLE, Color.WHITE]
+startSound = 'smw_keyhole_exit.wav'
+pressSound = 'smw_princess_help.wav'
 
 def main():
 	
 	with Board() as board, Leds() as leds:
 		leds.update(Leds.rgb_on(Color.WHITE))
-		play_wav(TEST_SOUND_PATH + 'start.wav')
+		play_wav(soundsPath + pressSound)
 		leds.update(Leds.rgb_off())
 
 		# While True will run forever
@@ -19,7 +24,7 @@ def main():
 			# Button press
 			board.button.wait_for_press()
 
-			play_wav_async(TEST_SOUND_PATH + 'press.wav')
+			play_wav_async(soundsPath + startSound)
 			ledTime = 0.15
 			leds.update(Leds.rgb_on(Color.GREEN))
 			time.sleep(ledTime)
@@ -35,29 +40,12 @@ def main():
 			time.sleep(ledTime)
 
 			# Generate random number
-			randomNum = random.randint(1,6)
-
-			# Pick LED color
-			ledColor = Color.RED
-			if randomNum == 1:
-				ledColor = Color.GREEN
-			elif randomNum == 2:
-				ledColor = Color.BLUE
-			elif randomNum == 3:
-				ledColor = Color.YELLOW
-			elif randomNum == 4:
-				ledColor = Color.RED
-			elif randomNum == 5:
-				ledColor = Color.PURPLE
-			elif randomNum == 6:
-				ledColor = Color.CYAN
-			else: 
-				ledColor = Color.WHITE
+			randomNum = random.randint(0,5)
 
 			# Turn on LED and play sound
-			leds.update(Leds.rgb_on(ledColor))
+			leds.update(Leds.rgb_on(ledColors[randomNum]))
 			print('Playing sound ' + str(randomNum))
-			play_wav(TEST_SOUND_PATH + 's' + str(randomNum) + '.wav')
+			play_wav(soundsPath + 's' + str(randomNum))
 			leds.update(Leds.rgb_off())
 
 if __name__ == '__main__':
