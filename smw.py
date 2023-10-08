@@ -1,5 +1,6 @@
 import random
 import time
+import os
 from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
@@ -97,6 +98,7 @@ def main():
 		yoshi = 0;
 
 		# Play start sound and LED animation
+		os.system('cls')
 		print('Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
@@ -107,6 +109,7 @@ def main():
 
 			# Button press
 			board.button.wait_for_press()
+			os.system('cls')
 			play_wav_async(soundsPath + pressSound)
 			flashAnimation(0.15);
 
