@@ -40,6 +40,7 @@ def main():
 
 			# Turn on LED and play sound
 			leds.update(Leds.rgb_on(ledColor))
+			print('Playing sound ' + str(randomNum))
 			play_wav(TEST_SOUND_PATH + 's' + str(randomNum) + '.wav')
 			leds.update(Leds.rgb_off())
 
