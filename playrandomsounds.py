@@ -8,6 +8,15 @@ from aiy.leds import Leds, Color, Pattern
 soundsPath = '/home/pi/GitHub/PIPlayRandomSounds/sounds/'
 wavFiles = ['smw_1-up.wav', 'smw_power-up.wav', 'smw_game_over.wav', 'smw_coin.wav', 'smw_course_clear.wav', 'smw_riding_yoshi.wav']
 ledColors = [Color.GREEN, Color.RED, Color.RED, Color.YELLOW, Color.PURPLE, Color.GREEN]
+
+actions = [
+	{'wav': 'smw_1-up.wav', 'color': Color.GREEN},
+	{'wav': 'smw_power-up.wav', 'color': Color.RED},
+	{'wav': 'smw_coin.wav', 'color': Color.YELLOW},
+	{'wav': 'smw_riding_yoshi.wav', 'color': Color.GREEN},
+	{'wav': 'smw_course_clear.wav', 'color': Color.PURPLE},
+	{'wav': 'smw_game_over.wav', 'color': Color.RED}
+]
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 
@@ -66,9 +75,9 @@ def main():
 			randomNum = random.randint(0,5)
 
 			# Turn on LED and play sound
-			leds.update(Leds.rgb_on(ledColors[randomNum]))
 			print('Playing sound ' + str(randomNum))
-			play_wav(soundsPath + wavFiles[randomNum])
+			leds.update(Leds.rgb_on(actions[randomNum].color))
+			play_wav(soundsPath + actions[randomNum].wav)
 			leds.update(Leds.rgb_off())
 
 if __name__ == '__main__':
