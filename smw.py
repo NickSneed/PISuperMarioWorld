@@ -114,8 +114,11 @@ def main():
 			curAction = actions[randomNum];
 			points += curAction['points'];
 
+			if actions['id'] == 'gameOver':
+				points = 0
+
 			if points < 20:
-				print(actions[randomNum]['display'] + ' | ' + str(points) + ' points')
+				print(str(points) + 'pts ' + actions[randomNum]['display'])
 				leds.update(Leds.rgb_on(curAction['color']))
 				play_wav(soundsPath + curAction['sound'])
 				leds.update(Leds.rgb_off())
