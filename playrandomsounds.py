@@ -7,12 +7,12 @@ from aiy.leds import Leds, Color, Pattern
 # sounds configs
 soundsPath = '/home/pi/GitHub/PIPlayRandomSounds/sounds/'
 actions = [
-	{'wav': 'smw_1-up.wav', 'color': Color.GREEN},
-	{'wav': 'smw_power-up.wav', 'color': Color.RED},
-	{'wav': 'smw_coin.wav', 'color': Color.YELLOW},
-	{'wav': 'smw_riding_yoshi.wav', 'color': Color.GREEN},
-	{'wav': 'smw_course_clear.wav', 'color': Color.PURPLE},
-	{'wav': 'smw_game_over.wav', 'color': Color.RED}
+	{'name': '1 UP', 'wav': 'smw_1-up.wav', 'color': Color.GREEN},
+	{'name': 'Mushroom', 'wav': 'smw_power-up.wav', 'color': Color.RED},
+	{'name': 'Coin', 'wav': 'smw_coin.wav', 'color': Color.YELLOW},
+	{'name': 'Yoshi', 'wav': 'smw_riding_yoshi.wav', 'color': Color.GREEN},
+	{'name': 'Course Clear', 'wav': 'smw_course_clear.wav', 'color': Color.PURPLE},
+	{'name': 'Game Over', 'wav': 'smw_game_over.wav', 'color': Color.RED}
 ]
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
@@ -72,7 +72,7 @@ def main():
 			randomNum = random.randint(0,5)
 
 			# Turn on LED and play sound
-			print('Playing sound ' + str(randomNum))
+			print(actions[randomNum]['name'])
 			leds.update(Leds.rgb_on(actions[randomNum]['color']))
 			play_wav(soundsPath + actions[randomNum]['wav'])
 			leds.update(Leds.rgb_off())
