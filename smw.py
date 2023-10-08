@@ -12,28 +12,28 @@ actions = [
 		'display': '1 UP', 
 		'sound': 'smw_1-up.wav', 
 		'color': Color.GREEN,
-		'points': 10
+		'points': 4
 	},
 	{
 		'id': 'mushroom',
 		'display': 'Mushroom', 
 		'sound': 'smw_power-up.wav', 
 		'color': Color.RED,
-		'points': 10
+		'points': 2
 	},
 	{
 		'id': 'coin',
 		'display': 'Coin', 
 		'sound': 'smw_coin.wav', 
 		'color': Color.YELLOW,
-		'points': 10
+		'points': 1
 	},
 	{
 		'id': 'yohsi',
 		'display': 'Yoshi', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
-		'points': 10
+		'points': 0
 	},
 	{
 		'id': 'courseClear',
@@ -47,7 +47,7 @@ actions = [
 		'display': 'Game Over', 
 		'sound': 'smw_game_over.wav', 
 		'color': Color.RED,
-		'points': 10
+		'points': 0
 	}
 ]
 startSound = 'smw_keyhole_exit.wav'
@@ -110,9 +110,10 @@ def main():
 			randomNum = random.randint(0,5)
 
 			# Turn on LED and play sound
-			print(actions[randomNum]['display'])
-			leds.update(Leds.rgb_on(actions[randomNum]['color']))
-			play_wav(soundsPath + actions[randomNum]['sound'])
+			curAction = actions[randomNum];
+			print(actions[randomNum]['display'] + ' ' + curAction['points'] + 'points')
+			leds.update(Leds.rgb_on(curAction['color']))
+			play_wav(soundsPath + curAction['sound'])
 			leds.update(Leds.rgb_off())
 
 if __name__ == '__main__':
