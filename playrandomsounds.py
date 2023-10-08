@@ -1,7 +1,8 @@
 import random
+import time
 from aiy.voice.audio import play_wav
 from aiy.board import Board, Led
-from aiy.leds import Leds, Color
+from aiy.leds import Leds, Color, Pattern
 
 TEST_SOUND_PATH = '/home/pi/GitHub/PIPlayRandomSounds/sounds/'
 
@@ -17,6 +18,10 @@ def main():
 
 			# Button press
 			board.button.wait_for_press()
+
+			leds.pattern = Pattern.blink(500)
+			leds.update(Leds.rgb_pattern(Color.RED))
+			time.sleep(5)
 
 			# Generate random number
 			randomNum = random.randint(1,6)
