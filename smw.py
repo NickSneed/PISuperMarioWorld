@@ -31,7 +31,7 @@ actions = [
 	},
 	{
 		'id': 'yoshi',
-		'display': 'You got Yoshi!\nYoshi adds 2 points each turn!', 
+		'display': 'You got Yoshi!\n Yoshi adds 2 points each turn!', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
 		'points': 0
@@ -127,7 +127,7 @@ def main():
 				yoshi = 0
 
 			# Actions
-			print('\n ' + curAction['display'])
+			print('\n ' + curAction['display'] + '\n')
 			print(' ' + str(curAction['points'] + yoshi) + 'pts')
 			print(' Score: ' + str(points))
 			if yoshi > 0:
