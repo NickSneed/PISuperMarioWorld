@@ -25,6 +25,7 @@ def main():
 
 			# Generate random number
 			randomNum = random.randint(1,6)
+			randomNum = 1
 
 			# Pick LED color
 			ledColor = Color.RED
