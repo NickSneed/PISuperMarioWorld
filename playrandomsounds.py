@@ -20,7 +20,7 @@ def main():
 			board.button.wait_for_press()
 
 			play_wav_async(TEST_SOUND_PATH + 'press.wav')
-			ledTime = 0.2
+			ledTime = 0.1
 			leds.update(Leds.rgb_on(Color.GREEN))
 			time.sleep(ledTime)
 			leds.update(Leds.rgb_on(Color.BLUE))
