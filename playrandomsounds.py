@@ -6,9 +6,6 @@ from aiy.leds import Leds, Color, Pattern
 
 # sounds configs
 soundsPath = '/home/pi/GitHub/PIPlayRandomSounds/sounds/'
-wavFiles = ['smw_1-up.wav', 'smw_power-up.wav', 'smw_game_over.wav', 'smw_coin.wav', 'smw_course_clear.wav', 'smw_riding_yoshi.wav']
-ledColors = [Color.GREEN, Color.RED, Color.RED, Color.YELLOW, Color.PURPLE, Color.GREEN]
-
 actions = [
 	{'wav': 'smw_1-up.wav', 'color': Color.GREEN},
 	{'wav': 'smw_power-up.wav', 'color': Color.RED},
