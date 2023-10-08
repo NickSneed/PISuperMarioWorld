@@ -50,7 +50,7 @@ def main():
 			# Button press
 			board.button.wait_for_press()
 			play_wav_async(soundsPath + pressSound)
-			flashAnimation(0.01);
+			flashAnimation(0.001);
 
 			# Generate random number
 			randomNum = random.randint(0,5)
