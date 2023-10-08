@@ -17,28 +17,28 @@ actions = [
 	},
 	{
 		'id': 'mushroom',
-		'display': 'You got a mushroom', 
+		'display': 'You got a mushroom!', 
 		'sound': 'smw_power-up.wav', 
 		'color': Color.RED,
 		'points': 2
 	},
 	{
 		'id': 'coin',
-		'display': 'Coin', 
+		'display': 'You collected a coin!', 
 		'sound': 'smw_coin.wav', 
 		'color': Color.YELLOW,
 		'points': 1
 	},
 	{
 		'id': 'yoshi',
-		'display': 'You got Yoshi', 
+		'display': 'You got Yoshi!', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
 		'points': 0
 	},
 	{
 		'id': 'courseClear',
-		'display': 'You cleared the course', 
+		'display': 'You cleared a course!', 
 		'sound': 'smw_course_clear.wav', 
 		'color': Color.PURPLE,
 		'points': 10
@@ -140,6 +140,9 @@ def main():
 				points = 0
 				print('You win!')
 				play_wav_async(soundsPath + endSound)
+				flashAnimation(0.15);
+				flashAnimation(0.15);
+				flashAnimation(0.15);
 				flashAnimation(0.15);
 				flashAnimation(0.15);
 				flashAnimation(0.15);
