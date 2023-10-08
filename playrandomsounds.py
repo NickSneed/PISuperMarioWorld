@@ -15,7 +15,7 @@ def main():
 	
 	with Board() as board, Leds() as leds:
 		leds.update(Leds.rgb_on(Color.WHITE))
-		play_wav(soundsPath + pressSound)
+		play_wav(soundsPath + startSound)
 		leds.update(Leds.rgb_off())
 
 		# While True will run forever
@@ -24,7 +24,7 @@ def main():
 			# Button press
 			board.button.wait_for_press()
 
-			play_wav_async(soundsPath + startSound)
+			play_wav_async(soundsPath + pressSound)
 			ledTime = 0.15
 			leds.update(Leds.rgb_on(Color.GREEN))
 			time.sleep(ledTime)
