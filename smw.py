@@ -59,11 +59,11 @@ endSound = 'smw_castle_clear.wav'
 def renderStartScreen():
 	os.system('clear')
 	print('\n -------------------------------')
-	print('\n |      Super Mario World      |')
-	print('\n |                             |')
-	print('\n |  Press the button to start  |')
-	print('\n |                             |')
-	print('\n -------------------------------')
+	print(' |      Super Mario World      |')
+	print(' |                             |')
+	print(' |  Press the button to start  |')
+	print(' |                             |')
+	print(' -------------------------------')
 
 
 def flashAnimation(cycles):
