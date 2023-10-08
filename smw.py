@@ -9,14 +9,14 @@ soundsPath = '/home/pi/GitHub/PISuperMarioWorld/sounds/'
 actions = [
 	{
 		'id': '1up',
-		'display': '1 UP', 
+		'display': 'You got a 1UP!', 
 		'sound': 'smw_1-up.wav', 
 		'color': Color.GREEN,
 		'points': 4
 	},
 	{
 		'id': 'mushroom',
-		'display': 'Mushroom', 
+		'display': 'You got a mushroom', 
 		'sound': 'smw_power-up.wav', 
 		'color': Color.RED,
 		'points': 2
@@ -30,14 +30,14 @@ actions = [
 	},
 	{
 		'id': 'yohsi',
-		'display': 'Yoshi', 
+		'display': 'You got Yoshi', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
 		'points': 0
 	},
 	{
 		'id': 'courseClear',
-		'display': 'Course Clear', 
+		'display': 'You cleared the course', 
 		'sound': 'smw_course_clear.wav', 
 		'color': Color.PURPLE,
 		'points': 10
@@ -94,8 +94,10 @@ def main():
 	with Board() as board, Leds() as leds:
 
 		points = 0;
+		yoshi = 0;
 
 		# Play start sound and LED animation
+		print('Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
 		print('Press the button to start')
@@ -111,23 +113,32 @@ def main():
 			# Generate random number
 			randomNum = random.randint(0,5)
 
-			# Turn on LED and play sound
+			# Choose random action and increment points
 			curAction = actions[randomNum];
-			points += curAction['points'];
+			points = points + curAction['points'] + yoshi;
 
+			# Special actions
 			if curAction['id'] == 'gameOver':
 				points = 0
+			if curAction['id'] == 'gameOver':
+				yoshi = 2
 
+			# Actions
 			if points < 20:
-				print(str(points) + 'pts ' + curAction['display'])
+				print(curAction['display'] + ' | ' + curAction['points'] + 'pts')
+				print('Total Points: ' + str(points))
 				leds.update(Leds.rgb_on(curAction['color']))
 				play_wav(soundsPath + curAction['sound'])
 				leds.update(Leds.rgb_off())
 
+			# Ending
 			if points >= 20:
 				points = 0
 				print('You win!')
 				play_wav_async(soundsPath + endSound)
+				flashAnimation(0.15);
+				flashAnimation(0.15);
+				flashAnimation(0.15);
 				flashAnimation(0.15);
 				flashAnimation(0.15);
 				flashAnimation(0.15);
