@@ -55,6 +55,17 @@ startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
 
+
+def renderStartScreen():
+	os.system('clear')
+	print('\n -------------------------------')
+	print('\n |      Super Mario World      |')
+	print('\n |                             |')
+	print('\n |  Press the button to start  |')
+	print('\n |                             |')
+	print('\n -------------------------------')
+
+
 def flashAnimation(cycles):
 	
 	ledTime = 0.15
@@ -104,12 +115,9 @@ def main():
 		yoshi = 0;
 
 		# Play start sound and LED animation
-		os.system('clear')
-		print('\n Super Mario World')
+		renderStartScreen()
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
-		print('\n Collect 20 points to win')
-		print(' Press the button to start')
 
 		# While True will run forever
 		while True:
