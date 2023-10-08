@@ -62,7 +62,7 @@ def flashAnimation(cycles):
 	with Leds() as leds:
 
 		i = 0
-		while i <= cycles:	
+		while i < cycles:	
 			i += 1
 			leds.update(Leds.rgb_on(Color.GREEN))
 			time.sleep(ledTime)
