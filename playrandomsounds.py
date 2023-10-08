@@ -31,19 +31,20 @@ def flashAnimation():
 def main():
 	
 	with Board() as board, Leds() as leds:
+
+		# Play start sound and LED animation
 		play_wav_async(soundsPath + startSound)
 		flashAnimation();
-		leds.update(Leds.rgb_off())
+		flashAnimation();
+		flashAnimation();
 
 		# While True will run forever
 		while True:
 
 			# Button press
 			board.button.wait_for_press()
-			flashAnimation();
-
 			play_wav_async(soundsPath + pressSound)
-			
+			flashAnimation();
 
 			# Generate random number
 			randomNum = random.randint(0,5)
