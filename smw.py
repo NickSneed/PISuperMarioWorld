@@ -30,7 +30,7 @@ actions = [
 		'points': 1
 	},
 	{
-		'id': 'yohsi',
+		'id': 'yoshi',
 		'display': 'You got Yoshi', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
