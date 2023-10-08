@@ -28,13 +28,13 @@ def main():
 			elif randomNum == 2:
 				ledColor = Color.BLUE
 			elif randomNum == 3:
-				ledColor = Color.PURPLE
-			elif randomNum == 4:
-				ledColor = Color.CYAN
-			elif randomNum == 5:
 				ledColor = Color.YELLOW
-			elif randomNum == 6:
+			elif randomNum == 4:
 				ledColor = Color.RED
+			elif randomNum == 5:
+				ledColor = Color.PURPLE
+			elif randomNum == 6:
+				ledColor = Color.CYAN
 			else: 
 				ledColor = Color.WHITE
 
