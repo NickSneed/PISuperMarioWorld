@@ -31,7 +31,7 @@ actions = [
 	},
 	{
 		'id': 'yoshi',
-		'display': 'You got Yoshi!\n Yoshi adds 2 points each turn!', 
+		'display': 'You got Yoshi!\n Yoshi adds 1 extra point each turn!', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
 		'points': 0
@@ -41,7 +41,7 @@ actions = [
 		'display': 'You cleared a course!', 
 		'sound': 'smw_course_clear.wav', 
 		'color': Color.PURPLE,
-		'points': 10
+		'points': 8
 	},
 	{
 		'id': 'gameOver',
@@ -127,7 +127,7 @@ def main():
 				yoshi = 0
 
 			# Actions
-			print('\n ' + str(curAction['points'] + yoshi) + 'pts' + '         Score: ' + str(points))
+			print('\n ' + str(curAction['points'] + yoshi) + 'pts' + '     Score: ' + str(points) + '\n')
 			print(' ' + curAction['display'] + '\n')
 			if yoshi > 0:
 				print('\n You have Yoshi')
@@ -137,7 +137,7 @@ def main():
 
 			# Get yoshi
 			if curAction['id'] == 'yoshi':
-				yoshi = 2
+				yoshi = 1
 
 			# Ending
 			if points >= 20:
