@@ -123,12 +123,13 @@ def main():
 			# Special actions
 			if curAction['id'] == 'gameOver':
 				points = 0
-			if curAction['id'] == 'gameOver':
+			if curAction['id'] == 'yoshi':
 				yoshi = 2
 
 			# Actions
 			if points < 20:
-				print(curAction['display'] + ' | ' + str(curAction['points']) + 'pts')
+				print(curAction['display'])
+				print(str(curAction['points']) + 'pts')
 				print('Total Points: ' + str(points))
 				leds.update(Leds.rgb_on(curAction['color']))
 				play_wav(soundsPath + curAction['sound'])
