@@ -5,7 +5,7 @@ from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 
 # sounds configs
-soundsPath = '/home/pi/GitHub/PIPlayRandomSounds/sounds/'
+soundsPath = '/home/pi/GitHub/PISuperMarioWorld/sounds/'
 actions = [
 	{
 		'id': '1up',
