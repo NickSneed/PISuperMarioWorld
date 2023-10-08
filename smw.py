@@ -123,7 +123,6 @@ def main():
 
 			# Game over
 			if curAction['id'] == 'gameOver':
-				os.system('clear')
 				points = 0
 				yoshi = 0
 
