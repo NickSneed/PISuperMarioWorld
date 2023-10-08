@@ -30,11 +30,16 @@ def flashAnimation(ledTime):
 def fadeAnimation(ledTime):
 
 	with Leds() as leds:
+
+		# Fade in
 		i = 0
 		while i < 256:
 			leds.update(Leds.rgb_on((i,0,0)))
 			i += 1
 			time.sleep(ledTime)
+
+		# Fade out
+		i = 255
 		while i > -1:
 			leds.update(Leds.rgb_on((i,0,0)))
 			i -= 1
