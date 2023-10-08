@@ -41,7 +41,7 @@ actions = [
 		'display': 'You cleared a course!', 
 		'sound': 'smw_course_clear.wav', 
 		'color': Color.PURPLE,
-		'points': 8
+		'points': 10
 	},
 	{
 		'id': 'gameOver',
