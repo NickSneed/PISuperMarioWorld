@@ -19,18 +19,19 @@ def main():
 			# Button press
 			board.button.wait_for_press()
 
+			ledTime = 0.2
 			leds.update(Leds.rgb_on(Color.GREEN))
-			time.sleep(1)
+			time.sleep(ledTime)
 			leds.update(Leds.rgb_on(Color.BLUE))
-			time.sleep(1)
+			time.sleep(ledTime)
 			leds.update(Leds.rgb_on(Color.YELLOW))
-			time.sleep(1)
+			time.sleep(ledTime)
 			leds.update(Leds.rgb_on(Color.RED))
-			time.sleep(1)
+			time.sleep(ledTime)
 			leds.update(Leds.rgb_on(Color.PURPLE))
-			time.sleep(1)
+			time.sleep(ledTime)
 			leds.update(Leds.rgb_on(Color.WHITE))
-			time.sleep(1)
+			time.sleep(ledTime)
 
 			# Generate random number
 			randomNum = random.randint(1,6)
