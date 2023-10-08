@@ -139,7 +139,7 @@ def main():
 			print(vs + hs + 'Score: ' + str(points))
 			print('\n' + hs + curAction['display'])
 			if curAction['points'] + yoshi > 0:
-				print(' ' + str(curAction['points'] + yoshi) + 'pts')
+				print(hs + str(curAction['points'] + yoshi) + 'pts')
 			if yoshi > 0:
 				print('\n' + hs + 'You have Yoshi')
 			leds.update(Leds.rgb_on(curAction['color']))
