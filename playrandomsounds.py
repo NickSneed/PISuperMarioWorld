@@ -1,6 +1,6 @@
 import random
 import time
-from aiy.voice.audio import play_wav
+from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 
@@ -19,6 +19,7 @@ def main():
 			# Button press
 			board.button.wait_for_press()
 
+			play_wav_async(TEST_SOUND_PATH + 'press.wav')
 			ledTime = 0.2
 			leds.update(Leds.rgb_on(Color.GREEN))
 			time.sleep(ledTime)
