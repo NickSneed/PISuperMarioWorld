@@ -30,17 +30,17 @@ def flashAnimation(ledTime):
 def fadeAnimation(ledTime):
 
 	with Leds() as leds:
-		leds.update(Leds.rgb_on(0,0,0))
+		leds.update(Leds.rgb_on((0,0,0)))
 		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(30,0,0))
+		leds.update(Leds.rgb_on((30,0,0)))
 		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(100,0,0))
+		leds.update(Leds.rgb_on((100,0,0)))
 		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(150,0,0))
+		leds.update(Leds.rgb_on((150,0,0)))
 		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(200,0,0))
+		leds.update(Leds.rgb_on((200,0,0)))
 		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(255,0,0))
+		leds.update(Leds.rgb_on((255,0,0)))
 		time.sleep(ledTime)
 
 def main():
