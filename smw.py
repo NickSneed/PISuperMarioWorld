@@ -85,15 +85,15 @@ def fadeAnimation():
 		# Fade in
 		i = 0
 		while i < 256:
-			i += 1
 			leds.update(Leds.rgb_on((i,0,0)))
+			i += 1
 			time.sleep(ledTime)
 
 		# Fade out
 		i = 255
 		while i > -1:
-			i -= 1
 			leds.update(Leds.rgb_on((i,0,0)))
+			i -= 1
 			time.sleep(ledTime)
 
 def main():
