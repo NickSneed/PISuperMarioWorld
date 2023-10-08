@@ -31,7 +31,7 @@ actions = [
 	},
 	{
 		'id': 'yoshi',
-		'display': 'You got Yoshi!\n Yoshi adds 1 extra point each turn!', 
+		'display': 'You got Yoshi!\n Yoshi adds 2 extra points each turn!', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
 		'points': 0
@@ -123,6 +123,7 @@ def main():
 
 			# Game over
 			if curAction['id'] == 'gameOver':
+				os.system('clear')
 				points = 0
 				yoshi = 0
 
@@ -139,12 +140,13 @@ def main():
 
 			# Get yoshi
 			if curAction['id'] == 'yoshi':
-				yoshi = 1
+				yoshi = 2
 
 			# Ending
 			if points >= 20:
 				points = 0
 				yoshi = 0
+				os.system('clear')
 				print('\n You win!')
 				play_wav_async(soundsPath + endSound)
 				flashAnimation(0.15);
