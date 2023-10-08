@@ -129,9 +129,9 @@ def main():
 			# Actions
 			print(curAction['display'])
 			print(str(curAction['points'] + yoshi) + 'pts')
-			print('Total Points: ' + str(points))
+			print('Score: ' + str(points))
 			if yoshi > 0:
-				print('You have Yoshi')
+				print('\nYou have Yoshi')
 			leds.update(Leds.rgb_on(curAction['color']))
 			play_wav(soundsPath + curAction['sound'])
 			leds.update(Leds.rgb_off())
