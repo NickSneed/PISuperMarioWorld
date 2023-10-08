@@ -52,6 +52,7 @@ actions = [
 ]
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
+endSound = 'smw_castle_clear'
 
 points = 0;
 
@@ -111,10 +112,21 @@ def main():
 
 			# Turn on LED and play sound
 			curAction = actions[randomNum];
-			print(actions[randomNum]['display'] + ' ' + str(curAction['points']) + 'points')
-			leds.update(Leds.rgb_on(curAction['color']))
-			play_wav(soundsPath + curAction['sound'])
-			leds.update(Leds.rgb_off())
+			points += curAction['points'];
+
+			if points < 20:
+				print(actions[randomNum]['display'] + ' | ' + str(points) + ' points')
+				leds.update(Leds.rgb_on(curAction['color']))
+				play_wav(soundsPath + curAction['sound'])
+				leds.update(Leds.rgb_off())
+
+			if points >= 20:
+				points = 0
+				print('You win!')
+				play_wav_async(soundsPath + endSound)
+				flashAnimation(0.15);
+				flashAnimation(0.15);
+				flashAnimation(0.15);
 
 if __name__ == '__main__':
     main()
