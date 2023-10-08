@@ -127,13 +127,12 @@ def main():
 				yoshi = 2
 
 			# Actions
-			if points < 20:
-				print(curAction['display'])
-				print(str(curAction['points']) + 'pts')
-				print('Total Points: ' + str(points))
-				leds.update(Leds.rgb_on(curAction['color']))
-				play_wav(soundsPath + curAction['sound'])
-				leds.update(Leds.rgb_off())
+			print(curAction['display'])
+			print(str(curAction['points']) + 'pts')
+			print('Total Points: ' + str(points))
+			leds.update(Leds.rgb_on(curAction['color']))
+			play_wav(soundsPath + curAction['sound'])
+			leds.update(Leds.rgb_off())
 
 			# Ending
 			if points >= 20:
