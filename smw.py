@@ -99,11 +99,11 @@ def main():
 
 		# Play start sound and LED animation
 		os.system('clear')
-		print('Super Mario World')
+		print('\n Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
-		print('\nCollect 20 points to win')
-		print('Press the button to start')
+		print('\n Collect 20 points to win')
+		print(' Press the button to start')
 
 		# While True will run forever
 		while True:
