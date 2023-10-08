@@ -11,11 +11,28 @@ ledColors = [Color.GREEN, Color.RED, Color.RED, Color.YELLOW, Color.PURPLE, Colo
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 
+def flashAnimation():
+
+	with Leds() as leds:
+		ledTime = 0.15
+		leds.update(Leds.rgb_on(Color.GREEN))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(Color.BLUE))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(Color.YELLOW))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(Color.RED))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(Color.PURPLE))
+		time.sleep(ledTime)
+		leds.update(Leds.rgb_on(Color.WHITE))
+		time.sleep(ledTime)
+
 def main():
 	
 	with Board() as board, Leds() as leds:
-		leds.update(Leds.rgb_on(Color.WHITE))
-		play_wav(soundsPath + startSound)
+		play_wav_async(soundsPath + startSound)
+		flashAnimation();
 		leds.update(Leds.rgb_off())
 
 		# While True will run forever
@@ -23,21 +40,10 @@ def main():
 
 			# Button press
 			board.button.wait_for_press()
+			flashAnimation();
 
 			play_wav_async(soundsPath + pressSound)
-			ledTime = 0.15
-			leds.update(Leds.rgb_on(Color.GREEN))
-			time.sleep(ledTime)
-			leds.update(Leds.rgb_on(Color.BLUE))
-			time.sleep(ledTime)
-			leds.update(Leds.rgb_on(Color.YELLOW))
-			time.sleep(ledTime)
-			leds.update(Leds.rgb_on(Color.RED))
-			time.sleep(ledTime)
-			leds.update(Leds.rgb_on(Color.PURPLE))
-			time.sleep(ledTime)
-			leds.update(Leds.rgb_on(Color.WHITE))
-			time.sleep(ledTime)
+			
 
 			# Generate random number
 			randomNum = random.randint(0,5)
