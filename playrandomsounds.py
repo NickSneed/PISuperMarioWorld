@@ -8,8 +8,8 @@ TEST_SOUND_PATH = '/home/pi/GitHub/PIPlayRandomSounds/sounds/'
 def main():
 	
 	with Board() as board, Leds() as leds:
-		leds.update(Leds.rgb_on(Color.GREEN))
-		play_wav(TEST_SOUND_PATH + 's1.wav')
+		leds.update(Leds.rgb_on(Color.WHITE))
+		play_wav(TEST_SOUND_PATH + 'start.wav')
 		leds.update(Leds.rgb_off())
 
 		# While True will run forever
