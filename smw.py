@@ -54,8 +54,6 @@ startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear'
 
-points = 0;
-
 def flashAnimation(ledTime):
 
 	with Leds() as leds:
@@ -94,6 +92,8 @@ def fadeAnimation():
 def main():
 	
 	with Board() as board, Leds() as leds:
+
+		points = 0;
 
 		# Play start sound and LED animation
 		play_wav_async(soundsPath + startSound)
