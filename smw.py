@@ -55,21 +55,26 @@ startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
 
-def flashAnimation(ledTime):
+def flashAnimation(cycles):
+	
+	ledTime = 0.15
 
 	with Leds() as leds:
-		leds.update(Leds.rgb_on(Color.GREEN))
-		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(Color.BLUE))
-		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(Color.YELLOW))
-		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(Color.RED))
-		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(Color.PURPLE))
-		time.sleep(ledTime)
-		leds.update(Leds.rgb_on(Color.WHITE))
-		time.sleep(ledTime)
+
+		i = 0
+		while i <= cycles:	
+			leds.update(Leds.rgb_on(Color.GREEN))
+			time.sleep(ledTime)
+			leds.update(Leds.rgb_on(Color.BLUE))
+			time.sleep(ledTime)
+			leds.update(Leds.rgb_on(Color.YELLOW))
+			time.sleep(ledTime)
+			leds.update(Leds.rgb_on(Color.RED))
+			time.sleep(ledTime)
+			leds.update(Leds.rgb_on(Color.PURPLE))
+			time.sleep(ledTime)
+			leds.update(Leds.rgb_on(Color.WHITE))
+			time.sleep(ledTime)
 
 def fadeAnimation():
 	ledTime = 0.002
@@ -112,7 +117,7 @@ def main():
 			board.button.wait_for_press()
 			os.system('clear')
 			play_wav_async(soundsPath + pressSound)
-			flashAnimation(0.15);
+			flashAnimation(1);
 
 			# Generate random number
 			randomNum = random.randint(0,5)
@@ -148,15 +153,7 @@ def main():
 				os.system('clear')
 				print('\n You win!')
 				play_wav_async(soundsPath + endSound)
-				flashAnimation(0.15);
-				flashAnimation(0.15);
-				flashAnimation(0.15);
-				flashAnimation(0.15);
-				flashAnimation(0.15);
-				flashAnimation(0.15);
-				flashAnimation(0.15);
-				flashAnimation(0.15);
-				flashAnimation(0.15);
+				flashAnimation(9);
 
 if __name__ == '__main__':
     main()
