@@ -98,7 +98,7 @@ def main():
 		yoshi = 0;
 
 		# Play start sound and LED animation
-		os.system('cls')
+		os.system('clear')
 		print('Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
@@ -109,7 +109,7 @@ def main():
 
 			# Button press
 			board.button.wait_for_press()
-			os.system('cls')
+			os.system('clear')
 			play_wav_async(soundsPath + pressSound)
 			flashAnimation(0.15);
 
