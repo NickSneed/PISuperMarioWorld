@@ -52,7 +52,7 @@ actions = [
 ]
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
-endSound = 'smw_castle_clear'
+endSound = 'smw_castle_clear.wav'
 
 def flashAnimation(ledTime):
 
@@ -98,6 +98,7 @@ def main():
 		# Play start sound and LED animation
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
+		print('Press the button to start')
 
 		# While True will run forever
 		while True:
