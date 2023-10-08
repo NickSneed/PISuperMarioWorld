@@ -17,15 +17,10 @@ def main():
 
 			# Button press
 			board.button.wait_for_press()
-			board.led.state = Led.ON
+			leds.update(Leds.rgb_on(Color.GREEN))
 			randomNum = str(random.randint(1,6))
 			play_wav(TEST_SOUND_PATH + 's' + randomNum + '.wav')
-			board.led.state = Led.OFF
-
-			# Button release
-			# board.button.wait_for_release()
-			# print('button released')
-
+			leds.update(Leds.rgb_off())
 
 if __name__ == '__main__':
     main()
