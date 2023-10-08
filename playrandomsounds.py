@@ -33,7 +33,7 @@ def main():
 
 		# Play start sound and LED animation
 		play_wav_async(soundsPath + startSound)
-		flashAnimation(0.5);
+		board.led.state = Led.PULSE_SLOW
 
 		# While True will run forever
 		while True:
