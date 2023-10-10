@@ -20,14 +20,17 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--voice', type=str, default='False', help='Enables voice over')
 args = parser.parse_args()
 
+# Prints and does voice over
 def printAndTalk(text):
 	print(text)
 	talk(text)
 
+# Only voice over
 def talk(text):
 	if args.voice == 'True':
 		say(text)
 
+# Main
 def main():
 	
 	with Board() as board, Leds() as leds:
@@ -35,7 +38,7 @@ def main():
 		points = 0;
 		yoshi = 0;
 
-		# Play start sound and LED animation
+		# start screen
 		os.system('clear')
 		print(strings['title'])
 		play_wav_async(sounds['startSound'])
@@ -89,7 +92,7 @@ def main():
 			if curAction['id'] == 'yoshi':
 				yoshi = 2
 
-			# Ending
+			# Win
 			if points >= 20:
 				points = 0
 				yoshi = 0
