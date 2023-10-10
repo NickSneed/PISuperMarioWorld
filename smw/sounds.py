@@ -1,5 +1,5 @@
 # Path to sounds
-soundsPath = '/home/pi/GitHub/PISuperMarioWorld/sounds/'
+soundsPath = '/home/pi/GitHub/PISuperMarioWorld/wavs/'
 
 # Sound files
 sounds = {
