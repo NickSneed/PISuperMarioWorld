@@ -148,7 +148,7 @@ def main():
 
 			if curAction['points'] + yoshi > 0:
 				print(str(curAction['points'] + yoshi) + 'pts')
-				talk('You got' str(curAction['points'] + yoshi) + 'more points')
+				talk('You got ' + str(curAction['points'] + yoshi) + 'more points')
 
 			if yoshi > 0:
 				print('\nYou have Yoshi')
