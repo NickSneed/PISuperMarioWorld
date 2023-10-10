@@ -1,14 +1,15 @@
 # Imports
 import argparse
 import random
-import time
 import os
 
 # AIY imports
 from aiy.voice.audio import play_wav, play_wav_async
-from aiy.board import Board, Led
-from aiy.leds import Leds, Color, Pattern
+from aiy.board import Board
+from aiy.leds import Leds
 from aiy.voice.tts import say
+
+# SMW imports
 from smw.strings import strings
 from smw.actions import actions
 from smw.ledAnimations import *
