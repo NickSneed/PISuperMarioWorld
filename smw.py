@@ -113,7 +113,6 @@ def main():
 		# Play start sound and LED animation
 		os.system('clear')
 		print('Super Mario World')
-		talk('Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
 		print('')
@@ -144,10 +143,16 @@ def main():
 			# Actions
 			print('Score: ' + str(points))
 			print('\n' + curAction['display'])
+			
+			talk(curAction['display'])
+
 			if curAction['points'] + yoshi > 0:
 				print(str(curAction['points'] + yoshi) + 'pts')
+				talk('You got' str(curAction['points'] + yoshi) + 'more points')
+
 			if yoshi > 0:
 				print('\nYou have Yoshi')
+
 			leds.update(Leds.rgb_on(curAction['color']))
 			play_wav(soundsPath + curAction['sound'])
 			leds.update(Leds.rgb_off())
