@@ -4,6 +4,7 @@ import os
 from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
+from aiy.voices import say
 
 # Spacers
 vs = '\n'
@@ -110,6 +111,7 @@ def main():
 		# Play start sound and LED animation
 		os.system('clear')
 		print(vs + hs + 'Super Mario World')
+		say('Welcome to Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
 		print('\n' + hs + 'Collect 20 points to win!')
