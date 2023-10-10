@@ -7,7 +7,7 @@ from aiy.board import Board
 from aiy.leds import Leds
 from smw.strings import strings
 from smw.actions import actions
-from smw.sounds import soundsPath
+from smw.sounds import sounds
 from smw.helpers import *
 
 # Main
