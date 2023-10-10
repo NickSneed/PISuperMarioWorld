@@ -4,7 +4,7 @@ import os
 from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
-from aiy.voices import say
+from aiy.voices.tts import say
 
 # Spacers
 vs = '\n'
