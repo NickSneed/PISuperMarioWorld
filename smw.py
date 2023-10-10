@@ -9,7 +9,7 @@ from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 from aiy.voice.tts import say
-from strings import strings
+from smw.strings import strings
 
 # Command args
 parser = argparse.ArgumentParser()
