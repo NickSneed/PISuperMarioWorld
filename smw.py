@@ -13,17 +13,12 @@ from aiy.voice.tts import say
 from smw.strings import strings
 from smw.actions import actions
 from smw.ledAnimations import *
+from smw.sounds import *
 
 # Command args
 parser = argparse.ArgumentParser()
 parser.add_argument('--voice', type=str, default='False', help='Enables voice over')
 args = parser.parse_args()
-
-# Sounds configs
-soundsPath = '/home/pi/GitHub/PISuperMarioWorld/sounds/'
-startSound = 'smw_keyhole_exit.wav'
-pressSound = 'smw_princess_help.wav'
-endSound = 'smw_castle_clear.wav'
 
 def printAndTalk(text):
 	print(text)
