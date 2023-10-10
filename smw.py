@@ -77,7 +77,7 @@ def main():
 				print('\nYou have Yoshi')
 
 			leds.update(Leds.rgb_on(curAction['color']))
-			play_wav(curAction[curAction['id']])
+			play_wav(sounds[curAction['id']])
 			leds.update(Leds.rgb_off())
 
 			talk(curAction['display'])
