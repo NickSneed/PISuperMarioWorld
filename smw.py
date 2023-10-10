@@ -4,14 +4,16 @@ import os
 import smw.helpers as helpers
 
 from aiy.voice.audio import play_wav, play_wav_async
-from aiy.board import Board as board
-from aiy.leds import Leds as leds
+import aiy.board as board
+import aiy.leds as leds
 from smw.strings import strings
 from smw.actions import actions
 from smw.sounds import sounds
 
 # Main
 def main():
+	
+
 
 	points = 0;
 	yoshi = 0;
