@@ -177,9 +177,6 @@ def main():
 				talk('You got ' + str(curAction['points'] + yoshi) + ' more points')
 				talk('You have a total of  ' + str(points) + ' points')
 
-			if yoshi > 0:
-				talk('You have Yoshi')
-
 			# Get yoshi
 			if curAction['id'] == 'yoshi':
 				yoshi = 2
