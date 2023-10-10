@@ -13,7 +13,7 @@ from aiy.voice.tts import say
 from smw.strings import strings
 from smw.actions import actions
 from smw.ledAnimations import *
-from smw.sounds import *
+from smw.sounds import soundsPath, sounds
 
 # Command args
 parser = argparse.ArgumentParser()
@@ -38,7 +38,7 @@ def main():
 		# Play start sound and LED animation
 		os.system('clear')
 		print(strings['title'])
-		play_wav_async(soundsPath + startSound)
+		play_wav_async(soundsPath + sounds['startSound'])
 		fadeAnimation()
 		print('')
 		talk(strings['title'])
@@ -51,7 +51,7 @@ def main():
 			# Button press
 			board.button.wait_for_press()
 			os.system('clear')
-			play_wav_async(soundsPath + pressSound)
+			play_wav_async(soundsPath + sounds['pressSound'])
 			flashAnimation(1);
 
 			# Generate random number
@@ -77,7 +77,7 @@ def main():
 				print('\nYou have Yoshi')
 
 			leds.update(Leds.rgb_on(curAction['color']))
-			play_wav(soundsPath + curAction['sound'])
+			play_wav(sounds['soundsPath'] + curAction['sound'])
 			leds.update(Leds.rgb_off())
 
 			talk(curAction['display'])
@@ -95,7 +95,7 @@ def main():
 				yoshi = 0
 				os.system('clear')
 				print(strings['win'])
-				play_wav_async(soundsPath + endSound)
+				play_wav_async(soundsPath + sounds['endSound'])
 				flashAnimation(9);
 
 if __name__ == '__main__':
