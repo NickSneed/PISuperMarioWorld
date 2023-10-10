@@ -9,6 +9,7 @@ from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 from aiy.voice.tts import say
+from strings import strings
 
 # Command args
 parser = argparse.ArgumentParser()
@@ -64,12 +65,6 @@ actions = [
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
-
-strings = {
-	'title': 'Super Mario World',
-	'instructions': 'Collect 20 points to win!',
-    'start': 'Press the button to start'
-}
 
 def printAndTalk(text):
 	print(text)
@@ -186,7 +181,7 @@ def main():
 				points = 0
 				yoshi = 0
 				os.system('clear')
-				print('You win!')
+				print(strings['win'])
 				play_wav_async(soundsPath + endSound)
 				flashAnimation(9);
 
