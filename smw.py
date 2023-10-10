@@ -6,10 +6,6 @@ from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 from aiy.voice.tts import say
 
-# Spacers
-vs = '\n'
-hs = '  '
-
 # sounds configs
 soundsPath = '/home/pi/GitHub/PISuperMarioWorld/sounds/'
 actions = [
@@ -110,12 +106,11 @@ def main():
 
 		# Play start sound and LED animation
 		os.system('clear')
-		print(vs + hs + 'Super Mario World')
-		say('Welcome to Super Mario World')
+		print('Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
-		print('\n' + hs + 'Collect 20 points to win!')
-		print(hs + 'Press the button to start')
+		print('\n Collect 20 points to win!')
+		print('Press the button to start')
 
 		# While True will run forever
 		while True:
@@ -139,12 +134,12 @@ def main():
 				yoshi = 0
 
 			# Actions
-			print(vs + hs + 'Score: ' + str(points))
-			print('\n' + hs + curAction['display'])
+			print('Score: ' + str(points))
+			print('\n' + curAction['display'])
 			if curAction['points'] + yoshi > 0:
-				print(hs + str(curAction['points'] + yoshi) + 'pts')
+				print(str(curAction['points'] + yoshi) + 'pts')
 			if yoshi > 0:
-				print('\n' + hs + 'You have Yoshi')
+				print('\nYou have Yoshi')
 			leds.update(Leds.rgb_on(curAction['color']))
 			play_wav(soundsPath + curAction['sound'])
 			leds.update(Leds.rgb_off())
@@ -158,7 +153,7 @@ def main():
 				points = 0
 				yoshi = 0
 				os.system('clear')
-				print(vs + hs + 'You win!')
+				print('You win!')
 				play_wav_async(soundsPath + endSound)
 				flashAnimation(9);
 
