@@ -10,6 +10,7 @@ from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 from aiy.voice.tts import say
 from smw.strings import strings
+from smw.actions import actions
 
 # Command args
 parser = argparse.ArgumentParser()
@@ -18,50 +19,6 @@ args = parser.parse_args()
 
 # Sounds configs
 soundsPath = '/home/pi/GitHub/PISuperMarioWorld/sounds/'
-actions = [
-	{
-		'id': '1up',
-		'display': 'You got a 1UP!', 
-		'sound': 'smw_1-up.wav', 
-		'color': Color.GREEN,
-		'points': 4
-	},
-	{
-		'id': 'mushroom',
-		'display': 'You got a mushroom!', 
-		'sound': 'smw_power-up.wav', 
-		'color': Color.RED,
-		'points': 2
-	},
-	{
-		'id': 'coin',
-		'display': 'You collected a coin!', 
-		'sound': 'smw_coin.wav', 
-		'color': Color.YELLOW,
-		'points': 1
-	},
-	{
-		'id': 'yoshi',
-		'display': 'You got Yoshi!\nYoshi adds 2 extra points each turn!', 
-		'sound': 'smw_riding_yoshi.wav', 
-		'color': Color.GREEN,
-		'points': 0
-	},
-	{
-		'id': 'courseClear',
-		'display': 'You cleared a course!', 
-		'sound': 'smw_course_clear.wav', 
-		'color': Color.PURPLE,
-		'points': 10
-	},
-	{
-		'id': 'gameOver',
-		'display': 'Game Over', 
-		'sound': 'smw_game_over.wav', 
-		'color': Color.RED,
-		'points': 0
-	}
-]
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
