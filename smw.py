@@ -144,11 +144,8 @@ def main():
 			print('Score: ' + str(points))
 			print('\n' + curAction['display'])
 			
-			talk(curAction['display'])
-
 			if curAction['points'] + yoshi > 0:
 				print(str(curAction['points'] + yoshi) + 'pts')
-				talk('You got ' + str(curAction['points'] + yoshi) + 'more points')
 
 			if yoshi > 0:
 				print('\nYou have Yoshi')
@@ -156,6 +153,10 @@ def main():
 			leds.update(Leds.rgb_on(curAction['color']))
 			play_wav(soundsPath + curAction['sound'])
 			leds.update(Leds.rgb_off())
+
+			talk(curAction['display'])
+			talk('You got ' + str(curAction['points'] + yoshi) + ' more points')
+			talk('You have a total of  ' + str(points) + ' points')
 
 			# Get yoshi
 			if curAction['id'] == 'yoshi':
