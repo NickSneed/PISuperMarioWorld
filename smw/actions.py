@@ -1,3 +1,5 @@
+from aiy.leds import Leds, Color, Pattern
+
 actions = [
 	{
 		'id': '1up',
