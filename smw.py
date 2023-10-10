@@ -22,7 +22,7 @@ def main():
 		os.system('clear')
 		print(strings['title'])
 		play_wav_async(sounds['startSound'])
-		helpers.fadeAnimation()
+		helpers.fadeAni()
 		print('')
 		helpers.talk(strings['title'])
 		helpers.printAndTalk(strings['instructions'])
@@ -35,7 +35,7 @@ def main():
 			board.button.wait_for_press()
 			os.system('clear')
 			play_wav_async(sounds['pressSound'])
-			helpers.flashAnimation(1);
+			helpers.flashAni(1);
 
 			# Generate random number
 			randomNum = random.randint(0,5)
@@ -81,7 +81,7 @@ def main():
 				os.system('clear')
 				print(strings['win'])
 				play_wav_async(sounds['endSound'])
-				helpers.flashAnimation(9);
+				helpers.flashAni(9);
 
 if __name__ == '__main__':
     main()

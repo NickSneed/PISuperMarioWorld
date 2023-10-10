@@ -10,7 +10,7 @@ parser.add_argument('--voice', type=str, default='False', help='Enables voice ov
 args = parser.parse_args()
 
 # Flashes colors
-def flashAnimation(cycles):
+def flashAni(cycles):
 	
 	ledTime = 0.15
 
@@ -33,7 +33,7 @@ def flashAnimation(cycles):
 			time.sleep(ledTime)
 
 # Fades up and down in red
-def fadeAnimation():
+def fadeAni():
 	ledTime = 0.002
 
 	with Leds() as leds:
