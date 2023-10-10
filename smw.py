@@ -56,6 +56,12 @@ startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
 
+voiceEnabled = True
+
+def talk(text):
+	if voiceEnabled == True:
+		say(text)
+
 def flashAnimation(cycles):
 	
 	ledTime = 0.15
@@ -107,6 +113,7 @@ def main():
 		# Play start sound and LED animation
 		os.system('clear')
 		print('Super Mario World')
+		talk('Super Mario World')
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
 		print('')
