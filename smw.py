@@ -172,8 +172,9 @@ def main():
 			leds.update(Leds.rgb_off())
 
 			talk(curAction['display'])
-			talk('You got ' + str(curAction['points'] + yoshi) + ' more points')
-			talk('You have a total of  ' + str(points) + ' points')
+			if curAction['id'] != 'gameOver':
+				talk('You got ' + str(curAction['points'] + yoshi) + ' more points')
+				talk('You have a total of  ' + str(points) + ' points')
 
 			# Get yoshi
 			if curAction['id'] == 'yoshi':
