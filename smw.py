@@ -28,11 +28,11 @@ def talk(text):
 	if args.voice == 'True':
 		say(text)
 
-def play(snd, isAsync):
-	if isAsync == True:
-		play_wav_async(soundsPath + snd);
-	else:
-		play_wav(soundsPath + snd);
+def play(snd):
+	play_wav(soundsPath + snd);
+
+def playAsync(snd):
+	play_wav_async(soundsPath + snd);
 
 def main():
 	
@@ -44,7 +44,7 @@ def main():
 		# Play start sound and LED animation
 		os.system('clear')
 		print(strings['title'])
-		play(sounds['startSound'], True)
+		playAsync(sounds['startSound'])
 		fadeAnimation()
 		print('')
 		talk(strings['title'])
@@ -57,7 +57,7 @@ def main():
 			# Button press
 			board.button.wait_for_press()
 			os.system('clear')
-			play(sounds['pressSound'], True)
+			playAsync(sounds['pressSound'])
 			flashAnimation(1);
 
 			# Generate random number
@@ -101,7 +101,7 @@ def main():
 				yoshi = 0
 				os.system('clear')
 				print(strings['win'])
-				play(sounds['endSound'], True)
+				playAsync(sounds['endSound'])
 				flashAnimation(9);
 
 if __name__ == '__main__':
