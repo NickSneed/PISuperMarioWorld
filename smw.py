@@ -32,7 +32,7 @@ actions = [
 	},
 	{
 		'id': 'yoshi',
-		'display': 'You got Yoshi!\n' + hs + 'Yoshi adds 2 extra points each turn!', 
+		'display': 'You got Yoshi!\nYoshi adds 2 extra points each turn!', 
 		'sound': 'smw_riding_yoshi.wav', 
 		'color': Color.GREEN,
 		'points': 0
