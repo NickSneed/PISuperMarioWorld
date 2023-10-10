@@ -1,12 +1,19 @@
+# Imports
+import sys
 import random
 import time
 import os
+
+# AIY imports
 from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 from aiy.voice.tts import say
 
-# sounds configs
+# Command args
+voiceEnabled = sys.argv[0]
+
+# Sounds configs
 soundsPath = '/home/pi/GitHub/PISuperMarioWorld/sounds/'
 actions = [
 	{
@@ -55,8 +62,6 @@ actions = [
 startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
-
-voiceEnabled = True
 
 def talk(text):
 	if voiceEnabled == True:
