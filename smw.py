@@ -129,10 +129,11 @@ def main():
 
 		# Play start sound and LED animation
 		os.system('clear')
-		printAndTalk(strings['title'])
+		print(strings['title'])
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
 		print('')
+		talk(strings['title'])
 		printAndTalk(strings['instructions'])
 		printAndTalk(strings['start'])
 
