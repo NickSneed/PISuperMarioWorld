@@ -6,7 +6,7 @@ from aiy.leds import Leds, Color, Pattern
 
 # Command args
 parser = argparse.ArgumentParser()
-parser.add_argument('--voice', type=str, default='False', help='Enables voice over')
+parser.add_argument('--voice', type=str, default='False', help='Setting to True enables voice over')
 args = parser.parse_args()
 
 # Flashes colors
