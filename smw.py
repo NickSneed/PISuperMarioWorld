@@ -1,34 +1,17 @@
 # Imports
-import argparse
+
 import random
 import os
-
-# AIY imports
 from aiy.voice.audio import play_wav, play_wav_async
 from aiy.board import Board
 from aiy.leds import Leds
-from aiy.voice.tts import say
-
-# SMW imports
 from smw.strings import strings
 from smw.actions import actions
 from smw.ledAnimations import *
 from smw.sounds import sounds
+from smw.voiceover import *
 
-# Command args
-parser = argparse.ArgumentParser()
-parser.add_argument('--voice', type=str, default='False', help='Enables voice over')
-args = parser.parse_args()
 
-# Prints and does voice over
-def printAndTalk(text):
-	print(text)
-	talk(text)
-
-# Only voice over
-def talk(text):
-	if args.voice == 'True':
-		say(text)
 
 # Main
 def main():
@@ -71,13 +54,15 @@ def main():
 
 			# Actions
 			print('Score: ' + str(points))
-			print('\n' + curAction['display'])
+			print('')
+			print(curAction['display'])
 			
 			if curAction['points'] + yoshi > 0:
 				print(str(curAction['points'] + yoshi) + 'pts')
 
 			if yoshi > 0:
-				print('\nYou have Yoshi')
+				print('')
+				print('You have Yoshi')
 
 			leds.update(Leds.rgb_on(curAction['color']))
 			play_wav(sounds[curAction['id']])
