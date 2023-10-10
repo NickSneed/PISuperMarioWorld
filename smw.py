@@ -1,5 +1,5 @@
 # Imports
-import sys
+import argparse
 import random
 import time
 import os
@@ -11,7 +11,9 @@ from aiy.leds import Leds, Color, Pattern
 from aiy.voice.tts import say
 
 # Command args
-voiceEnabled = sys.argv[0]
+parser = argparse.ArgumentParser()
+parser.add_argument('--voice', type=bool, default=False, help='A boolean flag')
+args = parser.parse_args()
 
 # Sounds configs
 soundsPath = '/home/pi/GitHub/PISuperMarioWorld/sounds/'
@@ -64,7 +66,7 @@ pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
 
 def talk(text):
-	if voiceEnabled == True:
+	if args.voice == True:
 		say(text)
 
 def flashAnimation(cycles):
