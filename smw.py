@@ -12,7 +12,7 @@ from aiy.voice.tts import say
 
 # Command args
 parser = argparse.ArgumentParser()
-parser.add_argument('--voice', type=bool, default=False, help='A boolean flag')
+parser.add_argument('--voice', type=str, default='False', help='Enables voice over')
 args = parser.parse_args()
 
 # Sounds configs
@@ -76,7 +76,7 @@ def printAndTalk(text):
 	talk(text)
 
 def talk(text):
-	if args.voice == True:
+	if args.voice == 'True':
 		say(text)
 
 def flashAnimation(cycles):
