@@ -65,6 +65,16 @@ startSound = 'smw_keyhole_exit.wav'
 pressSound = 'smw_princess_help.wav'
 endSound = 'smw_castle_clear.wav'
 
+strings = {
+	'title': 'Super Mario World',
+	'instructions': 'Collect 20 points to win!',
+    'start': 'Press the button to start'
+}
+
+def printAndTalk(text):
+	print(text)
+	talk(text)
+
 def talk(text):
 	if args.voice == True:
 		say(text)
@@ -119,12 +129,12 @@ def main():
 
 		# Play start sound and LED animation
 		os.system('clear')
-		print('Super Mario World')
+		printAndTalk(strings['title'])
 		play_wav_async(soundsPath + startSound)
 		fadeAnimation()
 		print('')
-		print('Collect 20 points to win!')
-		print('Press the button to start')
+		printAndTalk(strings['instructions'])
+		printAndTalk(strings['start'])
 
 		# While True will run forever
 		while True:
