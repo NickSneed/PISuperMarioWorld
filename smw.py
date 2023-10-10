@@ -13,7 +13,7 @@ from aiy.voice.tts import say
 from smw.strings import strings
 from smw.actions import actions
 from smw.ledAnimations import *
-from smw.sounds import soundsPath, sounds
+from smw.sounds import sounds
 
 # Command args
 parser = argparse.ArgumentParser()
@@ -28,12 +28,6 @@ def talk(text):
 	if args.voice == 'True':
 		say(text)
 
-def play(snd):
-	play_wav(soundsPath + snd);
-
-def playAsync(snd):
-	play_wav_async(soundsPath + snd);
-
 def main():
 	
 	with Board() as board, Leds() as leds:
@@ -44,7 +38,7 @@ def main():
 		# Play start sound and LED animation
 		os.system('clear')
 		print(strings['title'])
-		playAsync(sounds['startSound'])
+		play_wav_async(sounds['startSound'])
 		fadeAnimation()
 		print('')
 		talk(strings['title'])
@@ -57,7 +51,7 @@ def main():
 			# Button press
 			board.button.wait_for_press()
 			os.system('clear')
-			playAsync(sounds['pressSound'])
+			play_wav_async(sounds['pressSound'])
 			flashAnimation(1);
 
 			# Generate random number
@@ -83,7 +77,7 @@ def main():
 				print('\nYou have Yoshi')
 
 			leds.update(Leds.rgb_on(curAction['color']))
-			play(curAction['sound'])
+			play_wav(curAction[curAction['id']])
 			leds.update(Leds.rgb_off())
 
 			talk(curAction['display'])
@@ -101,7 +95,7 @@ def main():
 				yoshi = 0
 				os.system('clear')
 				print(strings['win'])
-				playAsync(sounds['endSound'])
+				play_wav_async(sounds['endSound'])
 				flashAnimation(9);
 
 if __name__ == '__main__':

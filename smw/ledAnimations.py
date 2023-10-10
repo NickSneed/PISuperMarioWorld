@@ -2,6 +2,7 @@ import time
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 
+# Flashes colors
 def flashAnimation(cycles):
 	
 	ledTime = 0.15
@@ -24,6 +25,7 @@ def flashAnimation(cycles):
 			leds.update(Leds.rgb_on(Color.WHITE))
 			time.sleep(ledTime)
 
+# Fades up and down in red
 def fadeAnimation():
 	ledTime = 0.002
 
