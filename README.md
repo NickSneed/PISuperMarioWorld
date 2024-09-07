@@ -1,3 +1,9 @@
+
+Command to run
+python3 smw.py
+
+---
+
 Press the button the take a turn
 
 1up 4pts  
