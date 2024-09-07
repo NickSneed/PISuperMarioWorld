@@ -55,9 +55,9 @@ def fadeAni():
 # Prints and does voice over
 def printAndTalk(text):
 	print(text)
-	talk(text)
+	# talk(text)
 
 # Only voice over
-def talk(text):
-	if args.voice == 'True':
+# def talk(text):
+	# if args.voice == 'True':
 		# say(text)
