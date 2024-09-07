@@ -1,6 +1,6 @@
 import time
 import argparse
-from aiy.voice.tts import say
+#from aiy.voice.tts import say
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 
@@ -60,4 +60,4 @@ def printAndTalk(text):
 # Only voice over
 def talk(text):
 	if args.voice == 'True':
-		say(text)
+		# say(text)
