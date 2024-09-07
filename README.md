@@ -1,4 +1,4 @@
-Command to run  
+Command to run: 
 python3 smw.py
 
 ---
@@ -13,3 +13,8 @@ courseClear 10
 gameOver  
 
 To win get over 20 points
+
+---
+
+Note:  
+python3 must be used if not aiy modules won't work
