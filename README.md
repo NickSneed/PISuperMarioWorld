@@ -1,5 +1,4 @@
-
-Command to run
+Command to run 
 python3 smw.py
 
 ---
