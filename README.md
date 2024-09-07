@@ -2,22 +2,26 @@
 
 ## Starting the game
 
-Command to run: 
+Use this command to start the game:  
+```
 python3 smw.py
+```
 
 ## Instructions
 
 Press the button the take a turn
 
-1up 4pts  
-mushroom 2pts  
-coin 1  
-yoshi adds 2 extra points each turn!  
-courseClear 10  
-gameOver  
+The button led will stop on a random color:
 
-To win get over 20 points
+Green - 1up (4pts)  
+Red - You got a mushroom (2pts)  
+Yellow - You got a coin (1pts)  
+Green - You got Yoshi (adds 2 extra points each turn)  
+Purple - You cleared a course (10pts)  
+Red - Game Over  
+
+To win get over 20 points before you receive a game over
 
 ## Other notes
 
-python3 must be used if not aiy modules won't work
+python3 is require for AIY modules
