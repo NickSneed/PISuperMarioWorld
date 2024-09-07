@@ -1,5 +1,7 @@
-Command to run
+Command to run  
 python3 smw.py
+
+---
 
 Press the button the take a turn
 
