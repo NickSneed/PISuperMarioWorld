@@ -1,7 +1,11 @@
+# Super Mario World
+
+## Starting the game
+
 Command to run: 
 python3 smw.py
 
----
+## Instructions
 
 Press the button the take a turn
 
@@ -14,7 +18,6 @@ gameOver
 
 To win get over 20 points
 
----
+## Other notes
 
-Note:  
 python3 must be used if not aiy modules won't work
