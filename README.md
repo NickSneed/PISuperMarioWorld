@@ -11,7 +11,7 @@ python3 smw.py
 
 Press the button the take a turn
 
-The button led will stop on a random color:
+The button led will stop on a random action:
 
 Green - 1up (4pts)  
 Red - You got a mushroom (2pts)  
