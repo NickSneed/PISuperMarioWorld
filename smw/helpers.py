@@ -1,6 +1,6 @@
 import time
 import argparse
-#from aiy.voice.tts import say
+from aiy.voice.tts import say
 from aiy.board import Board, Led
 from aiy.leds import Leds, Color, Pattern
 
@@ -55,9 +55,9 @@ def fadeAni():
 # Prints and does voice over
 def printAndTalk(text):
 	print(text)
-	# talk(text)
+	#talk(text)
 
 # Only voice over
-# def talk(text):
-	# if args.voice == 'True':
-		# say(text)
+def talk(text):
+	if args.voice == 'True':
+		say(text)
